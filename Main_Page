@@ -1,0 +1,50 @@
+import 'package:flutter/material.dart';
+
+void main(){runApp(Myapp());}
+
+
+class Myapp extends StatelessWidget{
+  bool _pinned = true;
+Widget build(BuildContext context){
+  return MaterialApp(
+    home: Scaffold(
+      drawer: Drawer(),
+      body: CustomScrollView(
+
+        slivers: <Widget>[
+        SliverAppBar(
+        pinned: _pinned,
+        expandedHeight: 160.0,
+        flexibleSpace: const FlexibleSpaceBar(
+          title: TextField(
+            decoration: InputDecoration(
+            prefixIcon: Icon(Icons.search),
+              ),
+             ),
+        )
+      ),
+         ]
+      ),
+        bottomNavigationBar: BottomNavigationBar(
+          items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+          icon: Icon(Icons.calendar_today_outlined),
+          label: '',
+          backgroundColor: Colors.blue,
+            ),
+          BottomNavigationBarItem(
+          icon: Icon(Icons.supervised_user_circle),
+          label: '',
+          backgroundColor: Colors.blue,
+            ),
+          BottomNavigationBarItem(
+          icon: Icon(Icons.menu_book),
+          label: '',
+          backgroundColor: Colors.blue,
+            ),
+  ],
+      ),
+    )
+  );
+}
+}
